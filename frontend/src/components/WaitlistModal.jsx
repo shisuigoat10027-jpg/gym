@@ -262,8 +262,7 @@ const WaitlistModal = ({ isOpen, onClose, product }) => {
 
               <div className="waitlist-email-section">
                 <label>Email Address</label>
-                <div className="email-input-wrapper">
-                  <Mail size={18} className="email-icon" />
+                <div className="email-input-wrapper no-icon">
                   <Input
                     type="email"
                     placeholder="you@example.com"
