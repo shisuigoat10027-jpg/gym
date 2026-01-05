@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { socialLinks } from '../data/mock';
+import { PaymentMethods } from './TrustBadges';
 
 // Custom social icons
 const InstagramIcon = ({ size = 18 }) => (
@@ -91,6 +92,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
+      {/* Payment Methods */}
+      <PaymentMethods />
 
       <div className="footer-bottom">
         <p className="footer-copyright">
