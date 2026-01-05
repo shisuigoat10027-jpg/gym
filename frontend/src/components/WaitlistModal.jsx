@@ -4,6 +4,7 @@ import { X, Check, Loader2, Mail, Lock, Plus, Minus, Trash2 } from 'lucide-react
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { calculateSpotsRemaining } from '../utils/waitlistSpots';
+import { launchConfetti } from '../utils/confetti';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
