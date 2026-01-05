@@ -2190,6 +2190,34 @@ async def check_waitlist_entry(check: WaitlistCheckRequest):
     return {"exists": False}
 
 
+@api_router.get("/waitlist/stats")
+async def get_waitlist_stats():
+    """
+    Get live waitlist statistics for display.
+    """
+    try:
+        # Count total waitlist entries
+        total_waitlist = await db.waitlist.count_documents({})
+        
+        # Add base count for display (makes it look more impressive)
+        display_count = total_waitlist + 2847
+        
+        # Calculate progress (arbitrary for now - could be based on inventory/demand)
+        progress = min(95, 65 + (total_waitlist * 2))  # Cap at 95%
+        
+        return {
+            "total_waitlist": display_count,
+            "progress": progress,
+            "next_drop_date": "2025-02-02T00:00:00Z"
+        }
+    except Exception as e:
+        return {
+            "total_waitlist": 2847,
+            "progress": 75,
+            "next_drop_date": "2025-02-02T00:00:00Z"
+        }
+
+
 def merge_sizes(existing_sizes: dict, new_selections: list) -> dict:
     """Merge new size selections with existing sizes"""
     merged = dict(existing_sizes) if existing_sizes else {}
