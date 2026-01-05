@@ -7195,21 +7195,23 @@ body {
     margin-bottom: 12px;
   }
 
+  /* Unified card layout - no gap between sections */
   .modal-content {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+    gap: 0;
+    padding: 16px;
   }
 
+  /* Remove separate backgrounds - unified card */
   .modal-image-section {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 16px;
-    border-radius: 12px;
+    background: transparent;
+    padding: 12px 12px 0 12px;
+    border-radius: 0;
   }
 
   .modal-image-container {
     border-radius: 12px;
-    height: 300px;
+    height: 280px;
     background: radial-gradient(ellipse at center, rgba(0, 217, 255, 0.04) 0%, rgba(10, 10, 10, 0.8) 40%, #0a0a0a 80%);
     border: 1px solid rgba(0, 217, 255, 0.15);
   }
@@ -7219,10 +7221,21 @@ body {
     max-height: 85%;
   }
 
+  /* Hide Front/Back toggle on mobile */
+  .modal-view-toggle {
+    display: none;
+  }
+
+  /* Hide navigation arrows on mobile - use swipe instead */
+  .view-nav {
+    display: none;
+  }
+
+  /* Unified details section - no separate background */
   .modal-details-section {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 16px;
-    border-radius: 12px;
+    background: transparent;
+    padding: 16px 12px 12px 12px;
+    border-radius: 0;
   }
 
   .modal-product-category {
@@ -7242,26 +7255,6 @@ body {
   .modal-product-price {
     font-size: 32px;
     margin-bottom: 24px;
-  }
-
-  .view-nav {
-    padding: 12px;
-    background: rgba(0, 217, 255, 0.15);
-    border: 1px solid rgba(0, 217, 255, 0.3);
-  }
-
-  .modal-view-toggle {
-    background: rgba(20, 20, 20, 0.6);
-    border: 1px solid rgba(0, 217, 255, 0.2);
-  }
-
-  .modal-toggle-btn {
-    color: #ffffff;
-  }
-
-  .modal-toggle-btn.active {
-    background: var(--brand-gradient);
-    color: #ffffff;
   }
 
   .modal-thumbnails {
