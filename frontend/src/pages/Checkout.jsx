@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { useToast } from '../hooks/use-toast';
-import { Lock, CreditCard, Tag, Check, X } from 'lucide-react';
+import { Lock, CreditCard, Tag, Check, X, Wallet, Bitcoin } from 'lucide-react';
 import ShippingOptions from '../components/ShippingOptions';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
