@@ -118,6 +118,56 @@
   transform: scale(1.05);
 }
 
+/* Footer Payment Methods - Modern card icons */
+.footer-payment-methods {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-page);
+}
+
+.footer-payment-methods .payment-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.payment-icons-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.payment-icon-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  min-width: 48px;
+  height: 32px;
+}
+
+.payment-icon-card:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.15);
+}
+
+.payment-icon-card svg {
+  width: 32px;
+  height: 20px;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .announcement-bar {
