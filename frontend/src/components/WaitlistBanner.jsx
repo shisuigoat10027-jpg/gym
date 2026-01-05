@@ -6,8 +6,8 @@ const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // Next drop date - February 15, 2026
-  const targetDate = new Date('2026-02-15T00:00:00');
+  // Next drop date - February 2, 2026
+  const targetDate = new Date('2026-02-02T00:00:00');
 
   useEffect(() => {
     const spots = calculateSpotsRemaining();
@@ -55,7 +55,7 @@ const WaitlistBanner = ({ onClick }) => {
         <div className="banner-center">
           <Clock size={16} />
           <span className="countdown-inline">
-            {formatTime(timeLeft.days)}d {formatTime(timeLeft.hours)}h {formatTime(timeLeft.minutes)}m {formatTime(timeLeft.seconds)}s
+            Next drop: {formatTime(timeLeft.days)}d {formatTime(timeLeft.hours)}h {formatTime(timeLeft.minutes)}m {formatTime(timeLeft.seconds)}s
           </span>
         </div>
         
