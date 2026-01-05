@@ -621,14 +621,14 @@ body {
   padding: 0 60px;
 }
 
-/* Text content - left side, shifted up slightly */
+/* Text content - left side */
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex: 0 0 auto;
-  margin-top: -40px;
+  margin-top: 60px;
 }
 
 /* Typography - stunning, premium */
