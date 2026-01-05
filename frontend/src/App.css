@@ -2541,8 +2541,9 @@ body {
 /* 1) HERO SECTION — MOBILE */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 700px;
+    min-height: 700px;
+    max-height: 700px;
     padding: 70px 16px 20px;
   }
   
