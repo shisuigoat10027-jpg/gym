@@ -137,6 +137,8 @@ const WaitlistModal = ({ isOpen, onClose, product }) => {
       if (response.ok) {
         setSuccess(true);
         setResult(data);
+        // Launch confetti celebration!
+        launchConfetti();
       } else {
         setError(data.message || 'Failed to join waitlist');
       }
