@@ -172,6 +172,7 @@ const ProductCategories = () => {
                       src={shirt.image} 
                       alt={`${shirt.name} - ${shirt.variant}`}
                       className="product-image"
+                      lazy={true}
                     />
                     <div className="view-details-hint">Click to view</div>
                   </div>
