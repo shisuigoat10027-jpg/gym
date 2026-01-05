@@ -1505,12 +1505,35 @@ body {
   justify-content: center;
 }
 
+/* RAZE Logo in Giveaway Popup */
+.giveaway-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.giveaway-logo-img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+}
+
+.giveaway-logo.success-logo .giveaway-logo-img {
+  width: 80px;
+  filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.6));
+}
+
+/* Legacy emoji icon (hidden when logo is used) */
 .giveaway-icon {
   font-size: 3rem;
   margin-bottom: 16px;
   line-height: 1;
   text-align: center;
   width: 100%;
+  display: none; /* Hidden - using logo instead */
 }
 
 .giveaway-success .giveaway-icon {
