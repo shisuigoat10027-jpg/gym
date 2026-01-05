@@ -9282,6 +9282,33 @@ body {
   justify-content: flex-end;
 }
 
+/* Mobile share button - BIGGER and visible */
+@media (max-width: 768px) {
+  .share-trigger {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .share-trigger svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .modal-share {
+    display: flex !important;
+  }
+  
+  .share-dropdown {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-radius: 16px 16px 0 0;
+    min-width: 100%;
+  }
+}
+
 /* ========================================
    FOOTER SOCIAL LINKS UPDATE
    ======================================== */
