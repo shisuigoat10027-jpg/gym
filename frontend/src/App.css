@@ -2943,19 +2943,19 @@ body {
 .giveaway-benefits {
   background: var(--bg-page);
   border-radius: 8px;
-  padding: 18px 20px;
+  padding: 12px 16px;
   text-align: left;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
 .giveaway-benefits .benefits-heading {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
 }
 
 .giveaway-benefits .benefits-list {
@@ -2967,11 +2967,11 @@ body {
 .giveaway-benefits .benefits-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 6px 0;
+  gap: 8px;
+  padding: 4px 0;
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
 .giveaway-benefits .benefits-list .check {
@@ -2981,7 +2981,7 @@ body {
 }
 
 .giveaway-disclaimer {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   margin: 0;
   opacity: 0.7;
