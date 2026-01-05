@@ -7465,7 +7465,18 @@ body {
   }
 
   .modal-share {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: 52px;
+    margin-bottom: 0;
+  }
+  
+  .modal-share .share-trigger {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   /* Unified card layout - no gap, compact */
