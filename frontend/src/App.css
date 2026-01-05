@@ -9565,6 +9565,21 @@ body {
   font-size: 14px;
 }
 
+.countdown-inline {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.waitlist-count-inline {
+  font-size: 13px;
+}
+
+.waitlist-count-inline strong {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
 /* ======================================== 
    WAITLIST INFO SECTION (Below banner)
    ======================================== */
