@@ -47,7 +47,16 @@
       }
       /* Prevent layout shift for hero */
       .hero-section {
-        min-height: 100vh;
+        height: 800px;
+        min-height: 800px;
+        max-height: 800px;
+      }
+      @media (max-width: 768px) {
+        .hero-section {
+          height: 700px;
+          min-height: 700px;
+          max-height: 700px;
+        }
       }
       /* Image loading states */
       img.loading {
