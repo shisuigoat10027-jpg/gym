@@ -585,9 +585,8 @@ body {
 /* NUCLEAR RESET: Remove ALL GPU compositing triggers from hero section */
 .hero-section {
   position: relative;
-  height: 800px;
-  min-height: 800px;
-  max-height: 800px;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
