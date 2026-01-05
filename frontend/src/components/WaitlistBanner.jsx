@@ -4,7 +4,6 @@ import { calculateSpotsRemaining } from '../utils/waitlistSpots';
 
 const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
-  const [waitlistCount, setWaitlistCount] = useState(2847);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   // Next drop date - February 15, 2026
@@ -32,14 +31,14 @@ const WaitlistBanner = ({ onClick }) => {
     updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
 
-    // Simulate live waitlist updates
-    const waitlistTimer = setInterval(() => {
-      setWaitlistCount(prev => prev + Math.floor(Math.random() * 2));
-    }, 45000);
+    // Slowly decrease spots remaining for urgency
+    const spotsTimer = setInterval(() => {
+      setSpotsRemaining(prev => Math.max(1, prev - Math.floor(Math.random() * 2)));
+    }, 60000); // Every minute
 
     return () => {
       clearInterval(timer);
-      clearInterval(waitlistTimer);
+      clearInterval(spotsTimer);
     };
   }, []);
 
@@ -63,7 +62,7 @@ const WaitlistBanner = ({ onClick }) => {
         <div className="banner-right">
           <Users size={16} />
           <span className="waitlist-count-inline">
-            <strong>{waitlistCount.toLocaleString()}</strong> waiting
+            Only <strong>{spotsRemaining}</strong> spots left
           </span>
         </div>
       </div>
