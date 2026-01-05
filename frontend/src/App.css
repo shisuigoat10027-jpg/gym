@@ -1622,7 +1622,7 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
   border-radius: 12px;
-  max-width: 420px;
+  max-width: 380px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
@@ -1635,8 +1635,8 @@ body {
 
 .giveaway-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   color: var(--text-muted);
@@ -1652,7 +1652,7 @@ body {
 }
 
 .giveaway-content {
-  padding: 32px 28px 28px;
+  padding: 20px 24px 22px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1666,19 +1666,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .giveaway-logo-img {
-  width: 100px;
+  width: 70px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.4));
 }
 
 .giveaway-logo.success-logo .giveaway-logo-img {
-  width: 80px;
-  filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.6));
+  width: 60px;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.6));
 }
 
 /* Legacy emoji icon (hidden when logo is used) */
@@ -1697,10 +1697,10 @@ body {
 }
 
 .giveaway-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 auto 8px auto;
+  margin: 0 auto 4px auto;
   line-height: 1.3;
   text-align: center;
   display: block;
@@ -1709,9 +1709,9 @@ body {
 }
 
 .giveaway-choice-line {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 12px auto;
   text-align: center;
   line-height: 1.4;
 }
