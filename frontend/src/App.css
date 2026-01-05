@@ -7516,50 +7516,50 @@ body {
     display: none;
   }
 
-  /* Unified details section - compact */
+  /* Unified details section - compact with SMALLER text */
   .modal-details-section {
     background: transparent;
-    padding: 10px 8px 8px 8px;
+    padding: 8px 8px 8px 8px;
     border-radius: 0;
   }
 
   .modal-product-category {
-    font-size: 10px;
+    font-size: 9px;
     margin-bottom: 2px;
   }
 
   .modal-product-name {
-    font-size: 18px;
+    font-size: 15px;
     color: #ffffff;
     margin-bottom: 2px;
   }
 
   .modal-product-variant {
-    font-size: 13px;
+    font-size: 11px;
     color: #cccccc;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .modal-product-price {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   .modal-product-price .original-price {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .modal-size-selector {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .modal-size-selector h4 {
-    font-size: 11px;
-    margin-bottom: 8px;
+    font-size: 10px;
+    margin-bottom: 6px;
   }
 
   .modal-sizes {
-    gap: 6px;
+    gap: 4px;
   }
 
   .modal-thumbnails {
@@ -7567,8 +7567,8 @@ body {
   }
   
   .modal-size-btn {
-    padding: 10px 0;
-    font-size: 13px;
+    padding: 8px 0;
+    font-size: 11px;
     background: rgba(0, 217, 255, 0.08);
     border: 1px solid rgba(0, 217, 255, 0.2);
     color: #ffffff;
@@ -7581,24 +7581,24 @@ body {
   }
 
   .modal-cta-btn {
-    padding: 12px 20px;
-    font-size: 13px;
-    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 11px;
+    min-height: 40px;
   }
 
   .modal-stock-status {
-    font-size: 11px;
-    margin-top: 8px;
-    padding: 6px 10px;
+    font-size: 9px;
+    margin-top: 6px;
+    padding: 4px 8px;
   }
   
   .modal-add-to-cart {
-    height: 60px;
-    font-size: 16px;
+    height: 48px;
+    font-size: 13px;
   }
   
   .size-guide-btn {
-    font-size: 12px;
+    font-size: 10px;
     padding: 8px 14px;
   }
 }
