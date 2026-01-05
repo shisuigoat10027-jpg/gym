@@ -1,75 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Button } from './ui/button';
 import { heroProduct } from '../data/mock';
-
-const API_URL = process.env.REACT_APP_BACKEND_URL || '';
-
-/**
- * Canvas-based PNG Alpha Sanitization
- * Fixes premultiplied alpha / dark RGB data in transparent pixels
- */
-const sanitizePng = async (imageUrl) => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    
-    img.onload = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext('2d');
-        
-        ctx.drawImage(img, 0, 0);
-        
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        
-        for (let i = 0; i < data.length; i += 4) {
-          const alpha = data[i + 3];
-          if (alpha === 0) {
-            data[i] = 0;
-            data[i + 1] = 0;
-            data[i + 2] = 0;
-          } else if (alpha < 15) {
-            const factor = alpha / 15;
-            data[i] = Math.round(data[i] * factor);
-            data[i + 1] = Math.round(data[i + 1] * factor);
-            data[i + 2] = Math.round(data[i + 2] * factor);
-          }
-        }
-        
-        ctx.putImageData(imageData, 0, 0);
-        
-        canvas.toBlob((blob) => {
-          if (blob) {
-            resolve(URL.createObjectURL(blob));
-          } else {
-            reject(new Error('Failed to create blob'));
-          }
-        }, 'image/png');
-      } catch (err) {
-        reject(err);
-      }
-    };
-    
-    img.onerror = () => reject(new Error(`Failed to load image: ${imageUrl}`));
-    img.src = imageUrl;
-  });
-};
-
-const sanitizeWithFallback = async (originalUrl) => {
-  try {
-    return await sanitizePng(originalUrl);
-  } catch (directError) {
-    try {
-      const proxyUrl = `${API_URL}/api/proxy-image?url=${encodeURIComponent(originalUrl)}`;
-      return await sanitizePng(proxyUrl);
-    } catch (proxyError) {
-      return originalUrl;
-    }
-  }
-};
+import { getSanitizedImage, preloadCriticalImages } from '../utils/imageSanitizer';
 
 const Hero = ({ onEarlyAccessClick }) => {
   const [showBack, setShowBack] = useState(false);
@@ -80,6 +12,11 @@ const Hero = ({ onEarlyAccessClick }) => {
   const frontOriginal = heroProduct.image;
   const backOriginal = heroProduct.backImage;
 
+  // Preload hero images immediately on mount
+  useEffect(() => {
+    preloadCriticalImages([frontOriginal, backOriginal]);
+  }, [frontOriginal, backOriginal]);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -89,13 +26,15 @@ const Hero = ({ onEarlyAccessClick }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Sanitize images in background
   useEffect(() => {
     let mounted = true;
     
     const sanitizeImages = async () => {
+      // Process both images in parallel
       const [sanitizedFront, sanitizedBack] = await Promise.all([
-        sanitizeWithFallback(frontOriginal),
-        sanitizeWithFallback(backOriginal)
+        getSanitizedImage(frontOriginal),
+        getSanitizedImage(backOriginal)
       ]);
       
       if (mounted) {
@@ -111,9 +50,12 @@ const Hero = ({ onEarlyAccessClick }) => {
     };
   }, [frontOriginal, backOriginal]);
   
-  const currentSanitized = showBack 
-    ? (backSanitized || backOriginal) 
-    : (frontSanitized || frontOriginal);
+  // Memoize current image to prevent unnecessary re-renders
+  const currentSanitized = useMemo(() => {
+    return showBack 
+      ? (backSanitized || backOriginal) 
+      : (frontSanitized || frontOriginal);
+  }, [showBack, frontSanitized, backSanitized, frontOriginal, backOriginal]);
 
   return (
     <section className="hero-section">
@@ -148,6 +90,9 @@ const Hero = ({ onEarlyAccessClick }) => {
                   src={frontSanitized || frontOriginal}
                   alt="Performance T-Shirt - Front View"
                   className="hero-shirt-single"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
                 />
               </div>
               <div className="hero-image-container hero-shirt-back">
@@ -156,6 +101,8 @@ const Hero = ({ onEarlyAccessClick }) => {
                   src={backSanitized || backOriginal}
                   alt="Performance T-Shirt - Back View"
                   className="hero-shirt-single"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -168,6 +115,9 @@ const Hero = ({ onEarlyAccessClick }) => {
                   src={currentSanitized}
                   alt={`Performance T-Shirt - ${showBack ? 'Back' : 'Front'} View`}
                   className="hero-shirt-single"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
                 />
               </div>
               

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getSanitizedImage } from '../utils/imageSanitizer';
 
 /**
- * SanitizedImage Component
- * Renders images with alpha channel sanitization to prevent
- * rectangular artifacts on dark backgrounds.
+ * Optimized SanitizedImage Component
+ * - Shows original image immediately for fast LCP
+ * - Sanitizes in background and swaps when ready
+ * - Supports lazy loading for below-fold images
  */
 const SanitizedImage = ({ 
   src, 
@@ -13,18 +14,22 @@ const SanitizedImage = ({
   style,
   onClick,
   onLoad,
+  lazy = false,
+  priority = false,
   ...props 
 }) => {
   const [sanitizedSrc, setSanitizedSrc] = useState(null);
-  const [error, setError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
   
   useEffect(() => {
     let mounted = true;
-    setError(false);
     setSanitizedSrc(null);
+    setIsLoaded(false);
     
     if (!src) return;
     
+    // Start sanitization in background
     const loadSanitized = async () => {
       try {
         const result = await getSanitizedImage(src);
@@ -32,32 +37,59 @@ const SanitizedImage = ({
           setSanitizedSrc(result);
         }
       } catch (err) {
-        console.error('SanitizedImage error:', err);
+        // Fallback handled by getSanitizedImage
         if (mounted) {
-          setError(true);
-          setSanitizedSrc(src); // Fallback to original
+          setSanitizedSrc(src);
         }
       }
     };
     
-    loadSanitized();
+    // For priority images, start immediately
+    // For lazy images, use IntersectionObserver
+    if (priority || !lazy) {
+      loadSanitized();
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            loadSanitized();
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '200px' }
+      );
+      
+      if (imgRef.current) {
+        observer.observe(imgRef.current);
+      }
+      
+      return () => observer.disconnect();
+    }
     
     return () => {
       mounted = false;
     };
-  }, [src]);
+  }, [src, lazy, priority]);
   
-  // Show original while loading sanitized version
+  const handleLoad = (e) => {
+    setIsLoaded(true);
+    onLoad?.(e);
+  };
+  
+  // Show original immediately, swap to sanitized when ready
   const displaySrc = sanitizedSrc || src;
   
   return (
     <img
+      ref={imgRef}
       src={displaySrc}
       alt={alt}
-      className={className}
+      className={`${className || ''} ${isLoaded ? 'loaded' : 'loading'}`}
       style={style}
       onClick={onClick}
-      onLoad={onLoad}
+      onLoad={handleLoad}
+      loading={lazy ? 'lazy' : 'eager'}
+      decoding="async"
       {...props}
     />
   );
