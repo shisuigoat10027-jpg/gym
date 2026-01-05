@@ -12496,38 +12496,131 @@ body {
   /* -----------------------------------
      10. WAITLIST MODAL - MOBILE FRIENDLY
      ----------------------------------- */
+  .waitlist-modal-overlay {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+  
   .waitlist-modal {
-    margin: 16px;
-    padding: 24px 20px;
-    max-height: calc(100vh - 32px);
+    margin: 0;
+    padding: 20px 16px;
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .waitlist-modal-close {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .waitlist-modal-header {
+    margin-bottom: 16px;
   }
   
   .waitlist-modal h2 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+  
+  .waitlist-modal-header p {
+    font-size: 13px;
+  }
+  
+  .waitlist-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+  }
+  
+  .waitlist-spots-banner {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .waitlist-product-preview {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .waitlist-product-preview img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .preview-name {
+    font-size: 14px;
+  }
+  
+  .preview-variant {
+    font-size: 12px;
+  }
+  
+  .waitlist-size-section {
+    margin-bottom: 14px;
+  }
+  
+  .size-section-header {
+    margin-bottom: 10px;
+  }
+  
+  .size-selection-row {
+    padding: 10px 0;
+  }
+  
+  .waitlist-email-section {
+    margin-bottom: 14px;
+  }
+  
+  .waitlist-email-section > label {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .email-input-wrapper input {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 12px 12px 12px 40px;
+    min-height: 48px;
+  }
+  
+  .email-icon {
+    left: 12px;
   }
   
   .waitlist-submit-btn,
   .waitlist-done-btn {
-    min-height: 52px;
-    font-size: 16px;
+    min-height: 50px;
+    font-size: 15px;
   }
   
   .size-select {
-    min-height: 48px;
-    font-size: 16px;
+    min-height: 46px;
+    font-size: 16px; /* Prevents iOS zoom */
   }
   
   .qty-btn {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+  
+  .waitlist-note {
+    margin-top: 12px;
+  }
+  
+  .waitlist-note p {
+    font-size: 11px;
+    margin: 3px 0;
+  }
+  
+  .add-size-btn {
+    padding: 10px;
+    font-size: 13px;
   }
   
   /* -----------------------------------
