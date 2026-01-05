@@ -114,7 +114,7 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
           <div className="early-access-benefits">
             <div className="benefit-item">
               <div className="benefit-icon">
-                <Gift size={20} />
+                <Gift size={16} />
               </div>
               <div className="benefit-text">
                 <strong>10% off</strong> your first order
@@ -123,7 +123,7 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
             
             <div className="benefit-item">
               <div className="benefit-icon highlight">
-                <Coins size={20} />
+                <Coins size={16} />
               </div>
               <div className="benefit-text">
                 <strong>RAZE Credits</strong> — Earn $1 credit for every $1 spent
@@ -132,7 +132,7 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
             
             <div className="benefit-item">
               <div className="benefit-icon">
-                <Clock size={20} />
+                <Clock size={16} />
               </div>
               <div className="benefit-text">
                 <strong>Early access</strong> to new drops
@@ -141,7 +141,7 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
             
             <div className="benefit-item">
               <div className="benefit-icon">
-                <Truck size={20} />
+                <Truck size={16} />
               </div>
               <div className="benefit-text">
                 <strong>Order tracking</strong> & history
@@ -152,14 +152,14 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
           {/* RAZE Credits highlight */}
           <div className="credits-highlight">
             <div className="credits-highlight-header">
-              <Coins size={18} className="credits-icon" />
+              <Coins size={14} className="credits-icon" />
               <span>RAZE CREDITS</span>
             </div>
             <p className="credits-highlight-text">
-              Redeem credits for discounts: <strong>100 credits = $5 off</strong>, <strong>200 = $15 off</strong>, <strong>300 = $25 off</strong>
+              Redeem credits: <strong>100 = $5</strong>, <strong>200 = $15</strong>, <strong>300 = $25 off</strong>
             </p>
             <p className="credits-bonus">
-              + Get <strong>10 bonus credits</strong> just for signing up!
+              + <strong>10 bonus credits</strong> just for signing up!
             </p>
           </div>
 
