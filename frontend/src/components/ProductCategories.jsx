@@ -255,6 +255,7 @@ const ProductCategories = () => {
                         src={short.image} 
                         alt={`${short.name} - ${short.variant}`}
                         className="product-image"
+                        lazy={true}
                       />
                     ) : (
                       <div className="product-placeholder">
