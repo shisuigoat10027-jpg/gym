@@ -1447,7 +1447,162 @@ body {
 }
 
 /* ========================================
-   GIVEAWAY POPUP — ORIGINAL DESIGN
+   POPUP LOGO STYLES
+   ======================================== */
+.popup-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.popup-logo-img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+}
+
+/* ========================================
+   EARLY ACCESS POPUP WITH RAZE CREDITS
+   ======================================== */
+.early-access-popup {
+  max-width: 440px;
+}
+
+.early-access-popup .popup-content {
+  padding: 28px 24px 24px;
+}
+
+.early-access-popup .popup-title {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.early-access-popup .popup-subtitle {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* Benefits list with icons */
+.early-access-benefits {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
+}
+
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0, 217, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.benefit-icon.highlight {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+.benefit-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.benefit-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* RAZE Credits highlight box */
+.credits-highlight {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(0, 217, 255, 0.08) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.credits-highlight-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.credits-highlight-header .credits-icon {
+  color: #F59E0B;
+}
+
+.credits-highlight-header span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #F59E0B;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.credits-highlight-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+.credits-highlight-text strong {
+  color: var(--text-primary);
+}
+
+.credits-bonus {
+  font-size: 0.8rem;
+  color: var(--brand-primary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.credits-bonus strong {
+  color: #F59E0B;
+}
+
+/* Login link */
+.popup-login-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+.popup-login-link .link-btn {
+  background: none;
+  border: none;
+  color: var(--brand-primary);
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.popup-login-link .link-btn:hover {
+  color: #fff;
+}
    ======================================== */
 .giveaway-overlay {
   position: fixed;
