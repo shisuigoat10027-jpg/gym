@@ -421,14 +421,39 @@ const Checkout = () => {
 
               <div className="form-section">
                 <h2 className="section-title">Payment</h2>
+                
+                {/* Payment Method Icons */}
+                <div className="payment-methods">
+                  <div className="payment-method-icons">
+                    <div className="payment-icon" title="Credit/Debit Card">
+                      <CreditCard size={24} />
+                    </div>
+                    <div className="payment-icon apple-pay" title="Apple Pay">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M17.72 7.21c-.09-.67-.45-1.31-.98-1.75-.53-.44-1.21-.66-1.91-.6-.64.06-1.23.35-1.7.81-.46.46-.73 1.05-.78 1.69.04.68.32 1.31.79 1.79.47.48 1.1.76 1.78.79.67-.03 1.31-.29 1.8-.74.49-.45.82-1.06.95-1.72l.05-.27zM13.08 10.5c-.47.28-.86.66-1.15 1.12-.29.46-.47.98-.53 1.51.02.59.19 1.17.49 1.67.3.5.73.91 1.23 1.19.51.28 1.08.42 1.66.41.54-.02 1.07-.17 1.53-.44-.02-.59-.19-1.17-.49-1.67-.3-.5-.72-.91-1.23-1.2-.5-.28-1.07-.43-1.65-.41-.54.01-1.06.16-1.52.44-.31-.93-.34-1.95-.08-2.89.26-.94.78-1.78 1.49-2.43-.41-.47-.93-.83-1.51-1.05-.58-.22-1.21-.29-1.83-.22-.79.09-1.52.45-2.08.99-.56.54-.93 1.24-1.05 2.01-.12.77 0 1.55.35 2.24.35.69.9 1.26 1.57 1.63z"/>
+                      </svg>
+                    </div>
+                    <div className="payment-icon google-pay" title="Google Pay">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+                      </svg>
+                    </div>
+                    <div className="payment-icon crypto" title="Crypto (Coming Soon)">
+                      <Bitcoin size={24} />
+                    </div>
+                  </div>
+                  <p className="payment-methods-note">
+                    All payment methods available at checkout
+                  </p>
+                </div>
+                
                 <div className="stripe-payment-info">
                   <div className="stripe-badge">
-                    <CreditCard size={20} />
-                    <span>Secure payment via Stripe</span>
                     <Lock size={16} />
+                    <span>Secure checkout powered by Stripe</span>
                   </div>
                   <p className="payment-note">
-                    You'll be redirected to Stripe's secure checkout to complete your payment.
+                    Apple Pay, Google Pay, and all major cards accepted. You'll be redirected to complete payment securely.
                   </p>
                 </div>
               </div>
