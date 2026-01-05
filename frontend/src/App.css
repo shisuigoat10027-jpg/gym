@@ -3297,24 +3297,82 @@ body {
   background: rgba(74, 159, 245, 0.08);
   border: 1px solid rgba(74, 159, 245, 0.3);
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px;
 }
 
 .stripe-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   color: var(--brand-primary);
   font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 .stripe-payment-info .payment-note {
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Payment Methods Display */
+.payment-methods {
+  margin-bottom: 16px;
+}
+
+.payment-method-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.payment-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.payment-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.payment-icon.apple-pay:hover {
+  color: #fff;
+}
+
+.payment-icon.google-pay:hover {
+  color: #4285F4;
+}
+
+.payment-icon.crypto {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-icon.crypto:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #F7931A;
+}
+
+.payment-methods-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
   margin: 0;
 }
 
