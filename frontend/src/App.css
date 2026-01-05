@@ -7264,16 +7264,16 @@ body {
   }
 
   .modal-product-price {
-    font-size: 24px;
-    margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 
   .modal-product-price .original-price {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .modal-size-selector {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .modal-size-selector h4 {
