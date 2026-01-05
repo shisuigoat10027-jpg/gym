@@ -31,7 +31,11 @@
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         text-size-adjust: 100%;
-        touch-action: manipulation;
+        touch-action: pan-x pan-y;
+        -ms-touch-action: pan-x pan-y;
+      }
+      * {
+        -webkit-tap-highlight-color: transparent;
       }
       body {
         margin: 0;
