@@ -4,11 +4,46 @@ import { calculateSpotsRemaining } from '../utils/waitlistSpots';
 
 const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
+  const [waitlistCount, setWaitlistCount] = useState(2847);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  // Next drop date - Feb 2, 2025
+  const targetDate = new Date('2025-02-02T00:00:00');
 
   useEffect(() => {
     const spots = calculateSpotsRemaining();
     setSpotsRemaining(spots);
+
+    // Countdown timer
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+      
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      }
+    };
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+
+    // Simulate live waitlist updates
+    const waitlistTimer = setInterval(() => {
+      setWaitlistCount(prev => prev + Math.floor(Math.random() * 2));
+    }, 45000);
+
+    return () => {
+      clearInterval(timer);
+      clearInterval(waitlistTimer);
+    };
   }, []);
+
+  const formatTime = (num) => String(num).padStart(2, '0');
 
   return (
     <div className="waitlist-banner" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
@@ -20,17 +55,15 @@ const WaitlistBanner = ({ onClick }) => {
         
         <div className="banner-center">
           <Clock size={16} />
-          <span>Next Drop: <strong>Feb 2</strong> • Waitlist Only</span>
+          <span className="countdown-inline">
+            {formatTime(timeLeft.days)}d {formatTime(timeLeft.hours)}h {formatTime(timeLeft.minutes)}m {formatTime(timeLeft.seconds)}s
+          </span>
         </div>
         
         <div className="banner-right">
           <Users size={16} />
-          <span>
-            {spotsRemaining !== null ? (
-              <>Only <strong>{spotsRemaining}</strong> {spotsRemaining === 1 ? 'spot' : 'spots'} left</>
-            ) : (
-              'Limited spots'
-            )}
+          <span className="waitlist-count-inline">
+            <strong>{waitlistCount.toLocaleString()}</strong> waiting
           </span>
         </div>
       </div>
