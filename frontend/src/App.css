@@ -204,6 +204,32 @@
     padding: 6px 10px;
     font-size: 10px;
   }
+  
+  /* Footer Payment Icons Mobile */
+  .footer-payment-methods {
+    padding: 20px 16px;
+  }
+  
+  .footer-payment-methods .payment-label {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .payment-icons-grid {
+    gap: 8px;
+    max-width: 100%;
+  }
+  
+  .payment-icon-card {
+    padding: 5px 6px;
+    min-width: 42px;
+    height: 28px;
+  }
+  
+  .payment-icon-card svg {
+    width: 28px;
+    height: 18px;
+  }
 }
 
 @keyframes slideIn {
