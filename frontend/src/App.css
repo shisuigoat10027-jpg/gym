@@ -588,8 +588,9 @@ body {
   min-height: 100vh;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 140px;
   background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
   overflow: visible;
 }
