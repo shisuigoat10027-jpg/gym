@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
+// RAZE Logo URL
+const RAZE_LOGO = 'https://customer-assets.emergentagent.com/job_simple-greeting-395/artifacts/7vw9prpd_blue.png';
+
 const GiveawayPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -107,7 +110,13 @@ const GiveawayPopup = () => {
 
         {!isSubmitted ? (
           <div className="giveaway-content">
-            <div className="giveaway-icon">🎁</div>
+            <div className="giveaway-logo">
+              <img 
+                src={RAZE_LOGO} 
+                alt="RAZE" 
+                className="giveaway-logo-img"
+              />
+            </div>
             <h2 className="giveaway-title">
               WIN A FREE RAZE PERFORMANCE SET
             </h2>
@@ -162,7 +171,13 @@ const GiveawayPopup = () => {
           </div>
         ) : (
           <div className="giveaway-content giveaway-success">
-            <div className="giveaway-icon">🎉</div>
+            <div className="giveaway-logo success-logo">
+              <img 
+                src={RAZE_LOGO} 
+                alt="RAZE" 
+                className="giveaway-logo-img"
+              />
+            </div>
             <h2 className="giveaway-title">You're In The Giveaway!</h2>
             <p className="giveaway-subtitle">
               1 winner selected every month. Check your email for updates!

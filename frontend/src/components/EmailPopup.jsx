@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Coins, Gift, Truck, Clock } from 'lucide-react';
 import { popup } from '../utils/storage';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+
+// RAZE Logo URL
+const RAZE_LOGO = 'https://customer-assets.emergentagent.com/job_simple-greeting-395/artifacts/7vw9prpd_blue.png';
 
 const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
@@ -74,7 +77,9 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
             <X size={20} />
           </button>
           <div className="popup-content popup-success">
-            <div className="popup-success-icon">✓</div>
+            <div className="popup-logo">
+              <img src={RAZE_LOGO} alt="RAZE" className="popup-logo-img" />
+            </div>
             <h2 className="popup-success-title">You Have Early Access!</h2>
             <p className="popup-success-subtitle">
               You're already signed in and have access to all drops.
@@ -91,32 +96,71 @@ const EmailPopup = ({ isOpen: externalIsOpen, onClose: externalOnClose }) => {
       <div className="popup-overlay" onClick={handleClose} />
 
       {/* Popup */}
-      <div className="popup-container no-animation">
+      <div className="popup-container no-animation early-access-popup">
         <button className="popup-close" onClick={handleClose} aria-label="Close">
           <X size={20} />
         </button>
 
         <div className="popup-content">
+          <div className="popup-logo">
+            <img src={RAZE_LOGO} alt="RAZE" className="popup-logo-img" />
+          </div>
+          
           <h2 className="popup-title">Get Early Access</h2>
           <p className="popup-subtitle">
-            Create an account to unlock early access to drops and get 10% off your first order.
+            Create an account to unlock exclusive member benefits
           </p>
 
           <div className="early-access-benefits">
-            <ul className="benefits-list">
-              <li>
-                <span className="check">✓</span>
-                10% off your first order
-              </li>
-              <li>
-                <span className="check">✓</span>
-                Early access to new drops
-              </li>
-              <li>
-                <span className="check">✓</span>
-                Order tracking & history
-              </li>
-            </ul>
+            <div className="benefit-item">
+              <div className="benefit-icon">
+                <Gift size={20} />
+              </div>
+              <div className="benefit-text">
+                <strong>10% off</strong> your first order
+              </div>
+            </div>
+            
+            <div className="benefit-item">
+              <div className="benefit-icon highlight">
+                <Coins size={20} />
+              </div>
+              <div className="benefit-text">
+                <strong>RAZE Credits</strong> — Earn $1 credit for every $1 spent
+              </div>
+            </div>
+            
+            <div className="benefit-item">
+              <div className="benefit-icon">
+                <Clock size={20} />
+              </div>
+              <div className="benefit-text">
+                <strong>Early access</strong> to new drops
+              </div>
+            </div>
+            
+            <div className="benefit-item">
+              <div className="benefit-icon">
+                <Truck size={20} />
+              </div>
+              <div className="benefit-text">
+                <strong>Order tracking</strong> & history
+              </div>
+            </div>
+          </div>
+          
+          {/* RAZE Credits highlight */}
+          <div className="credits-highlight">
+            <div className="credits-highlight-header">
+              <Coins size={18} className="credits-icon" />
+              <span>RAZE CREDITS</span>
+            </div>
+            <p className="credits-highlight-text">
+              Redeem credits for discounts: <strong>100 credits = $5 off</strong>, <strong>200 = $15 off</strong>, <strong>300 = $25 off</strong>
+            </p>
+            <p className="credits-bonus">
+              + Get <strong>10 bonus credits</strong> just for signing up!
+            </p>
           </div>
 
           <button
