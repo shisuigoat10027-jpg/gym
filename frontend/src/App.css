@@ -7169,60 +7169,64 @@ body {
 @media (max-width: 768px) {
   .product-modal-overlay {
     overflow: hidden;
+    padding: 8px;
   }
 
   .product-modal {
     position: relative;
     margin: 0;
     transform: none;
-    max-width: 92vw;
-    width: 92vw;
-    max-height: 85vh;
-    border-radius: 20px;
+    max-width: 100%;
+    width: 100%;
+    max-height: 95vh;
+    height: auto;
+    border-radius: 16px;
     background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(14, 14, 14, 0.98) 100%);
     border: 1px solid rgba(0, 217, 255, 0.2);
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 217, 255, 0.15);
+    overflow: hidden;
   }
 
   .modal-close {
-    top: 16px;
-    right: 16px;
-    width: 44px;
-    height: 44px;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
     background: rgba(0, 217, 255, 0.08);
     border: 1px solid rgba(0, 217, 255, 0.2);
     color: var(--text-secondary);
     border-radius: 50%;
+    z-index: 10;
   }
 
   .modal-share {
-    margin-bottom: 12px;
+    display: none;
   }
 
-  /* Unified card layout - no gap between sections */
+  /* Unified card layout - no gap, compact */
   .modal-content {
     grid-template-columns: 1fr;
     gap: 0;
-    padding: 16px;
+    padding: 8px;
   }
 
   /* Remove separate backgrounds - unified card */
   .modal-image-section {
     background: transparent;
-    padding: 12px 12px 0 12px;
+    padding: 8px 8px 0 8px;
     border-radius: 0;
   }
 
   .modal-image-container {
-    border-radius: 12px;
-    height: 280px;
+    border-radius: 10px;
+    height: 200px;
     background: radial-gradient(ellipse at center, rgba(0, 217, 255, 0.04) 0%, rgba(10, 10, 10, 0.8) 40%, #0a0a0a 80%);
     border: 1px solid rgba(0, 217, 255, 0.15);
   }
 
   .modal-product-image {
-    max-width: 85%;
-    max-height: 85%;
+    max-width: 80%;
+    max-height: 80%;
   }
 
   /* Hide Front/Back toggle on mobile */
@@ -7230,64 +7234,86 @@ body {
     display: none;
   }
 
-  /* Hide navigation arrows on mobile - use swipe instead */
+  /* Hide navigation arrows on mobile */
   .view-nav {
     display: none;
   }
 
-  /* Unified details section - no separate background */
+  /* Unified details section - compact */
   .modal-details-section {
     background: transparent;
-    padding: 16px 12px 12px 12px;
+    padding: 10px 8px 8px 8px;
     border-radius: 0;
   }
 
   .modal-product-category {
-    font-size: 12px;
+    font-size: 10px;
+    margin-bottom: 2px;
   }
 
   .modal-product-name {
-    font-size: 22px;
+    font-size: 18px;
     color: #ffffff;
+    margin-bottom: 2px;
   }
 
   .modal-product-variant {
-    font-size: 15px;
+    font-size: 13px;
     color: #cccccc;
+    margin-bottom: 6px;
   }
 
   .modal-product-price {
-    font-size: 32px;
-    margin-bottom: 24px;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .modal-product-price .original-price {
+    font-size: 14px;
+  }
+
+  .modal-size-selector {
+    margin-bottom: 10px;
+  }
+
+  .modal-size-selector h4 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .modal-sizes {
+    gap: 6px;
   }
 
   .modal-thumbnails {
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .thumbnail {
-    width: 70px;
-    height: 70px;
-    background: rgba(10, 10, 10, 0.6);
-    border: 2px solid rgba(0, 217, 255, 0.15);
-  }
-  
-  .thumbnail.active {
-    border-color: var(--brand-primary);
+    display: none;
   }
   
   .modal-size-btn {
-    padding: 14px 0;
-    font-size: 15px;
+    padding: 10px 0;
+    font-size: 13px;
     background: rgba(0, 217, 255, 0.08);
-    border: 2px solid rgba(0, 217, 255, 0.2);
+    border: 1px solid rgba(0, 217, 255, 0.2);
     color: #ffffff;
   }
   
   .modal-size-btn.active {
     background: var(--brand-gradient);
     color: #ffffff;
+    border-color: transparent;
+  }
+
+  .modal-cta-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .modal-stock-status {
+    font-size: 11px;
+    margin-top: 8px;
+    padding: 6px 10px;
+  }
   }
   
   .modal-add-to-cart {
