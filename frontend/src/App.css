@@ -9977,6 +9977,11 @@ body {
   padding-left: 44px;
 }
 
+/* No icon variant - normal padding */
+.email-input-wrapper.no-icon input {
+  padding-left: 14px;
+}
+
 .waitlist-error {
   background: rgba(248, 113, 113, 0.1);
   border: 1px solid rgba(248, 113, 113, 0.3);
