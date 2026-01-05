@@ -7,7 +7,7 @@ const Hero = ({ onEarlyAccessClick }) => {
   const [showBack, setShowBack] = useState(false);
   const [frontSanitized, setFrontSanitized] = useState(null);
   const [backSanitized, setBackSanitized] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
   
   const frontOriginal = heroProduct.image;
   const backOriginal = heroProduct.backImage;
@@ -21,6 +21,9 @@ const Hero = ({ onEarlyAccessClick }) => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    
+    // Check on mount
+    handleResize();
     
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
