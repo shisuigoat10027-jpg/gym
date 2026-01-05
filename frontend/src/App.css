@@ -12663,6 +12663,11 @@ body {
     min-height: 48px;
   }
   
+  /* No icon variant - normal padding on mobile */
+  .email-input-wrapper.no-icon input {
+    padding-left: 14px;
+  }
+  
   .email-icon {
     left: 14px;
     width: 18px;
