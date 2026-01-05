@@ -1454,49 +1454,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .popup-logo-img {
-  width: 80px;
+  width: 60px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.4));
 }
 
 /* ========================================
    EARLY ACCESS POPUP WITH RAZE CREDITS
    ======================================== */
 .early-access-popup {
-  max-width: 440px;
+  max-width: 380px;
 }
 
 .early-access-popup .popup-content {
-  padding: 28px 24px 24px;
+  padding: 18px 20px 20px;
 }
 
 .early-access-popup .popup-title {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
+  font-size: 1.15rem;
+  margin-bottom: 4px;
 }
 
 .early-access-popup .popup-subtitle {
-  font-size: 0.85rem;
-  margin-bottom: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
   opacity: 0.8;
 }
 
 /* Benefits list with icons */
 .early-access-benefits {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 0;
+  gap: 10px;
+  padding: 7px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -1505,9 +1505,9 @@ body {
 }
 
 .benefit-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   background: rgba(0, 217, 255, 0.1);
   display: flex;
   align-items: center;
@@ -1516,15 +1516,20 @@ body {
   flex-shrink: 0;
 }
 
+.benefit-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
 .benefit-icon.highlight {
   background: rgba(245, 158, 11, 0.15);
   color: #F59E0B;
 }
 
 .benefit-text {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .benefit-text strong {
@@ -1537,24 +1542,26 @@ body {
   width: 100%;
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(0, 217, 255, 0.08) 100%);
   border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
 }
 
 .credits-highlight-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 5px;
 }
 
 .credits-highlight-header .credits-icon {
   color: #F59E0B;
+  width: 14px;
+  height: 14px;
 }
 
 .credits-highlight-header span {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #F59E0B;
   text-transform: uppercase;
@@ -1562,10 +1569,10 @@ body {
 }
 
 .credits-highlight-text {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
-  margin: 0 0 6px 0;
-  line-height: 1.5;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
 }
 
 .credits-highlight-text strong {
@@ -1573,7 +1580,7 @@ body {
 }
 
 .credits-bonus {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--brand-primary);
   margin: 0;
   font-weight: 500;
@@ -1585,9 +1592,9 @@ body {
 
 /* Login link */
 .popup-login-link {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .popup-login-link .link-btn {
