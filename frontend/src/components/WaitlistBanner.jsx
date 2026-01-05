@@ -7,8 +7,8 @@ const WaitlistBanner = ({ onClick }) => {
   const [waitlistCount, setWaitlistCount] = useState(2847);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // Next drop date - Feb 2, 2025
-  const targetDate = new Date('2025-02-02T00:00:00');
+  // Next drop date - March 15, 2025
+  const targetDate = new Date('2025-03-15T00:00:00');
 
   useEffect(() => {
     const spots = calculateSpotsRemaining();
