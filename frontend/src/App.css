@@ -2567,7 +2567,7 @@ body {
   .hero-product-display {
     order: 1;
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
   
   /* Slightly bigger hero shirt on mobile */
@@ -2586,38 +2586,36 @@ body {
     font-size: 12px;
   }
   
-  /* Mobile: Two shirts side by side - MUCH BIGGER (1.5-2x) */
+  /* Mobile: Two shirts side by side - BIGGER */
   .hero-shirts-mobile {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 0;
+    gap: 8px;
     width: 100%;
     max-width: 100vw;
     overflow: visible;
-    margin-bottom: 4px;
   }
   
   .hero-shirts-mobile .hero-image-container {
-    width: 52%;
-    max-width: 300px;
+    width: 48%;
+    max-width: 200px;
     height: auto;
     aspect-ratio: 3/4;
     position: relative;
   }
   
   .hero-shirts-mobile .hero-shirt-single {
-    width: 130%;
+    width: 100%;
     height: auto;
     object-fit: contain;
-    max-height: 480px;
-    margin-left: -15%;
+    max-height: 320px;
   }
   
   .hero-shirts-mobile .hero-shirt-glow-layer {
-    inset: -25%;
-    filter: blur(35px);
-    opacity: 0.85;
+    inset: -15%;
+    filter: blur(25px);
+    opacity: 0.7;
   }
   
   /* Hide toggle on mobile since we show both shirts */
@@ -2638,18 +2636,17 @@ body {
     display: none;
   }
   
-  /* SMALLER RAZE title on mobile (60-70% of original) - shirts are the star */
+  /* Smaller RAZE title on mobile - shirt is the star */
   .hero-title {
-    font-size: 28px;
-    margin-bottom: 4px;
-    letter-spacing: 0.06em;
+    font-size: 42px;
+    margin-bottom: 6px;
+    letter-spacing: 0.08em;
   }
   
-  /* SMALLER tagline on mobile (60-70% of original) */
   .hero-tagline {
-    font-size: 7px;
-    margin-bottom: 10px;
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    margin-bottom: 12px;
+    letter-spacing: 0.18em;
   }
   
   .hero-cta .btn-primary {
