@@ -2847,44 +2847,49 @@ body {
     font-size: 12px;
   }
   
-  /* Mobile: Two shirts side by side - 1.5-2x BIGGER, CENTRALIZED */
+  /* Mobile: Two shirts side by side - MASSIVE, DOMINANT */
   .hero-shirts-mobile {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
     gap: 0;
-    width: 100%;
+    width: 100vw;
     max-width: 100vw;
     overflow: visible;
-    margin-bottom: 8px;
-    margin-top: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    min-height: 55vh;
   }
   
   .hero-shirts-mobile .hero-image-container {
-    width: 50% !important;
-    max-width: 195px !important;
-    height: auto !important;
-    aspect-ratio: 3/4;
+    width: 50vw !important;
+    max-width: none !important;
+    height: 55vh !important;
+    min-height: 380px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
   }
   
   .hero-shirts-mobile .hero-shirt-single {
-    width: 200% !important;
+    width: 260% !important;
     height: auto !important;
     object-fit: contain;
-    max-height: 420px;
+    max-height: 520px;
+    min-height: 400px;
     margin: 0 auto;
     transform: translateX(0);
   }
   
   .hero-shirts-mobile .hero-shirt-glow-layer {
-    inset: -25%;
-    filter: blur(35px);
-    opacity: 0.8;
+    inset: -30%;
+    filter: blur(40px);
+    opacity: 0.85;
   }
   
   /* Hide toggle on mobile since we show both shirts */
