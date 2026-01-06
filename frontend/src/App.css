@@ -2862,15 +2862,15 @@ body {
     align-items: center;
     text-align: center;
     order: 2;
-    margin-top: -12vh;
+    margin-top: -80px;
     padding-top: 0;
   }
   
   .hero-description {
-    font-size: 3.3vw;
+    font-size: clamp(12px, 3.3vw, 14px);
     line-height: 1.5;
-    max-width: 80vw;
-    margin: 0 auto 2vw;
+    max-width: 320px;
+    margin: 0 auto 12px;
   }
   
   .hero-product-display {
