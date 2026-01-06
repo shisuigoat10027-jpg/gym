@@ -3196,7 +3196,8 @@ body {
   
   .collection-section .size-selector {
     gap: 1vw !important;
-    margin-bottom: 1.5vw !important;
+    margin-bottom: 1vw !important;
+    margin-top: 0 !important;
   }
   
   .collection-section .size-btn {
