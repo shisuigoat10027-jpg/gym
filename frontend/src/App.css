@@ -1207,9 +1207,10 @@ body {
 
 @media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    max-width: 400px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 100%;
+    padding: 0 8px;
   }
 }
 
