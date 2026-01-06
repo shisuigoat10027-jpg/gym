@@ -6376,15 +6376,15 @@ body {
 
 @media (max-width: 640px) {
   .product-grid {
-    gap: 16px;
+    gap: 10px;
   }
 
-  .shirts-grid,
-  .shorts-grid {
-    grid-template-columns: 1fr;
+  .shirts-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .shorts-grid {
+    grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
   }
 }
