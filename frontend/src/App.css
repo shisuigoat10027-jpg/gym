@@ -7556,19 +7556,28 @@ body {
     z-index: 10;
   }
 
+  /* Share button - positioned next to close button, matching style */
   .modal-share {
     display: flex;
     position: absolute;
-    top: 12px;
+    top: 8px;
     right: 52px;
     margin-bottom: 0;
+    z-index: 10;
   }
   
   .modal-share .share-trigger {
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 217, 255, 0.08);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 50%;
+    color: var(--text-secondary);
+  }
+  
+  .modal-share .share-trigger svg {
+    width: 16px;
+    height: 16px;
   }
 
   /* Unified card layout - VERTICAL on mobile (image above details) */
