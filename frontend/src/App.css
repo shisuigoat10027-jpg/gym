@@ -3192,33 +3192,34 @@ body {
   }
   
   .collection-section .product-image-wrapper {
-    height: 52vw !important;
-    min-height: 45vw !important;
+    height: clamp(160px, 52vw, 220px) !important;
+    min-height: 160px !important;
   }
   
   .collection-section .product-info {
-    padding: 2vw 2.5vw !important;
+    padding: 8px 10px !important;
+    min-height: auto;
   }
   
   .collection-section .product-variant {
-    font-size: 2.3vw !important;
-    margin-bottom: 1vw !important;
+    font-size: clamp(9px, 2.3vw, 11px) !important;
+    margin-bottom: 4px !important;
   }
   
   .collection-section .product-price {
-    font-size: 3vw !important;
+    font-size: clamp(12px, 3vw, 14px) !important;
   }
   
   .collection-section .product-price-row {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 1vw !important;
-    margin-bottom: 0.5vw !important;
+    gap: 4px !important;
+    margin-bottom: 4px !important;
   }
   
   .collection-section .product-original-price {
-    font-size: 2.3vw !important;
+    font-size: clamp(9px, 2.3vw, 11px) !important;
     order: 1;
   }
   
