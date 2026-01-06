@@ -2958,16 +2958,16 @@ body {
     display: none;
   }
   
-  /* BIGGER RAZE title and tagline on mobile - FLUID SCALING */
+  /* HERO TYPOGRAPHY - Scale up only, never shrink below minimums */
   .hero-title {
-    font-size: 12vw !important;
-    margin-bottom: 1vw;
+    font-size: clamp(42px, 12vw, 72px) !important;
+    margin-bottom: 4px;
     letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 3vw !important;
-    margin-bottom: 3vw;
+    font-size: clamp(10px, 3vw, 14px) !important;
+    margin-bottom: 12px;
     letter-spacing: 0.2em;
   }
   
