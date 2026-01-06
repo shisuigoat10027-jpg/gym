@@ -2913,17 +2913,17 @@ body {
     display: none;
   }
   
-  /* BIGGER RAZE title and tagline on mobile */
+  /* BIGGER RAZE title and tagline on mobile - 2X SIZE */
   .hero-title {
-    font-size: 38px !important;
-    margin-bottom: 4px;
-    letter-spacing: 0.08em;
+    font-size: 72px !important;
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 10px !important;
-    margin-bottom: 10px;
-    letter-spacing: 0.18em;
+    font-size: 18px !important;
+    margin-bottom: 12px;
+    letter-spacing: 0.2em;
   }
   
   .hero-cta .btn-primary {
