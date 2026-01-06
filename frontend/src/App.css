@@ -3063,10 +3063,19 @@ body {
   
   .product-price-row {
     margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .product-original-price {
+    order: 1;
   }
   
   .product-price {
     font-size: 13px !important;
+    order: 2;
   }
   
   .product-price .original-price {
