@@ -1,6 +1,38 @@
 
 
 /* ===================================
+   MOBILE-FIRST CONSISTENT SPACING SYSTEM
+   Scale UP only, never squish down
+   =================================== */
+
+:root {
+  /* Fixed spacing system - never shrinks */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  
+  /* Minimum sizes - never go below */
+  --min-font-size: 12px;
+  --min-button-height: 44px;
+  --min-touch-target: 44px;
+  --min-card-width: 150px;
+  
+  /* Container */
+  --container-max: 420px;
+}
+
+/* Container for consistent layout */
+.mobile-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ===================================
    GLOBAL OVERFLOW CONTROL
    =================================== */
 html, body {
