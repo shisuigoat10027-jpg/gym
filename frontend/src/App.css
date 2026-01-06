@@ -2008,7 +2008,7 @@ body {
 }
 
 .giveaway-content {
-  padding: 12px 24px 22px;
+  padding: 0 24px 22px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2023,7 +2023,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 6px;
-  margin-top: -5px;
+  margin-top: -10px;
 }
 
 .giveaway-logo-img {
