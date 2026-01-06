@@ -2817,15 +2817,15 @@ body {
     align-items: center;
     text-align: center;
     order: 2;
-    margin-top: -110px;
+    margin-top: -12vh;
     padding-top: 0;
   }
   
   .hero-description {
-    font-size: 13px;
+    font-size: 3.3vw;
     line-height: 1.5;
-    max-width: 300px;
-    margin: 0 auto 8px;
+    max-width: 80vw;
+    margin: 0 auto 2vw;
   }
   
   .hero-product-display {
