@@ -3147,17 +3147,17 @@ body {
   }
   
   .collection-section .product-image-wrapper {
-    height: 200px !important;
-    min-height: 180px !important;
+    height: 220px !important;
+    min-height: 200px !important;
   }
   
   .collection-section .product-info {
-    padding: 6px 8px !important;
+    padding: 8px 10px !important;
   }
   
   .collection-section .product-variant {
     font-size: 9px !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 3px !important;
   }
   
   .collection-section .product-price {
@@ -3169,6 +3169,7 @@ body {
     flex-direction: row !important;
     align-items: center !important;
     gap: 4px !important;
+    margin-bottom: 6px !important;
   }
   
   .collection-section .product-original-price {
