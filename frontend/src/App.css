@@ -2850,7 +2850,7 @@ body {
     font-size: 12px;
   }
   
-  /* Mobile: Two shirts side by side - MASSIVE, DOMINANT, EDGE-TO-EDGE */
+  /* Mobile: Two shirts side by side - FLUID SCALING */
   .hero-shirts-mobile {
     display: flex !important;
     flex-direction: row !important;
@@ -2861,17 +2861,17 @@ body {
     max-width: 100vw;
     overflow: visible;
     margin-bottom: 0;
-    margin-top: -60px;
+    margin-top: -6vh;
     margin-left: -16px;
     margin-right: -16px;
-    min-height: 58vh;
+    min-height: 55vh;
   }
   
   .hero-shirts-mobile .hero-image-container {
     width: 50vw !important;
     max-width: none !important;
-    height: 58vh !important;
-    min-height: 420px;
+    height: 55vh !important;
+    min-height: 45vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -2880,11 +2880,11 @@ body {
   }
   
   .hero-shirts-mobile .hero-shirt-single {
-    width: 290% !important;
+    width: 75vw !important;
     height: auto !important;
     object-fit: contain;
-    max-height: 580px;
-    min-height: 450px;
+    max-height: 55vh;
+    min-height: 40vh;
     margin: 0 auto;
     transform: translateX(0);
   }
