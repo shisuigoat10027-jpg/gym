@@ -5,7 +5,6 @@ import { calculateSpotsRemaining } from '../utils/waitlistSpots';
 const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [hasInteracted, setHasInteracted] = useState(false);
 
   // Next drop date - February 2, 2026
   const targetDate = new Date('2026-02-02T00:00:00');
@@ -43,31 +42,7 @@ const WaitlistBanner = ({ onClick }) => {
     };
   }, []);
 
-  // Show banner after ANY user interaction (touch or scroll)
-  useEffect(() => {
-    const handleInteraction = () => {
-      setHasInteracted(true);
-      // Remove listeners after first interaction
-      window.removeEventListener('scroll', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-      window.removeEventListener('mousedown', handleInteraction);
-    };
-
-    window.addEventListener('scroll', handleInteraction);
-    window.addEventListener('touchstart', handleInteraction);
-    window.addEventListener('mousedown', handleInteraction);
-    
-    return () => {
-      window.removeEventListener('scroll', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-      window.removeEventListener('mousedown', handleInteraction);
-    };
-  }, []);
-
   const formatTime = (num) => String(num).padStart(2, '0');
-
-  // Don't render until user interacts
-  if (!hasInteracted) return null;
 
   return (
     <div className="waitlist-banner" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
