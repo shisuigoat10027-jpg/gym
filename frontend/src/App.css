@@ -901,9 +901,9 @@ body {
   margin-top: 60px;
 }
 
-/* Typography - stunning, premium */
+/* Typography - stunning, premium - FLUID SCALING */
 .hero-title {
-  font-size: 120px;
+  font-size: clamp(48px, 10vw, 120px);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: 0.05em;
@@ -915,7 +915,7 @@ body {
 }
 
 .hero-tagline {
-  font-size: 16px;
+  font-size: clamp(10px, 2.5vw, 16px);
   color: var(--brand-primary);
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -928,7 +928,7 @@ body {
 
 /* Hero description text */
 .hero-description {
-  font-size: 16px;
+  font-size: clamp(12px, 2vw, 16px);
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.8;
   margin: 0 0 32px 0;
