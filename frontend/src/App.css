@@ -9674,20 +9674,23 @@ body {
   border-top: 1px solid rgba(0, 217, 255, 0.3);
   border-bottom: 1px solid rgba(0, 217, 255, 0.4);
   padding: 12px 20px;
+  position: sticky;
+  top: 60px;
   z-index: 998;
   box-shadow: 0 4px 24px rgba(0, 217, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Sticky banner - fixed to top when scrolled */
-.waitlist-banner.sticky-banner {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  animation: slideDown 0.3s ease-out;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .waitlist-banner:hover {
