@@ -3228,28 +3228,29 @@ body {
   }
   
   .collection-section .size-selector {
-    gap: 1vw !important;
-    margin-bottom: 1vw !important;
-    margin-top: 0 !important;
+    gap: 4px !important;
+    margin-bottom: 6px !important;
   }
   
   .collection-section .size-btn {
-    padding: 1vw 1.5vw !important;
-    font-size: 2vw !important;
-    min-width: 6vw !important;
+    padding: 4px 6px !important;
+    font-size: clamp(8px, 2vw, 10px) !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
   }
   
   .collection-section .btn-add-to-cart,
   .collection-section .waitlist-btn {
-    padding: 1.5vw 2vw !important;
-    font-size: 2.3vw !important;
+    padding: 6px 8px !important;
+    font-size: clamp(9px, 2.3vw, 11px) !important;
+    min-height: 32px !important;
   }
   
   .collection-section .popular-badge {
-    font-size: 1.8vw !important;
-    padding: 0.5vw 1.2vw !important;
-    top: 1vw !important;
-    left: 1vw !important;
+    font-size: clamp(6px, 1.8vw, 8px) !important;
+    padding: 2px 6px !important;
+    top: 4px !important;
+    left: 4px !important;
   }
   
   .collection-section .wishlist-heart {
