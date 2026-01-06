@@ -2913,16 +2913,16 @@ body {
     display: none;
   }
   
-  /* BIGGER RAZE title and tagline on mobile - 2X SIZE */
+  /* BIGGER RAZE title and tagline on mobile - FLUID SCALING */
   .hero-title {
-    font-size: 72px !important;
-    margin-bottom: 6px;
+    font-size: 18vw !important;
+    margin-bottom: 1vw;
     letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 18px !important;
-    margin-bottom: 12px;
+    font-size: 4.5vw !important;
+    margin-bottom: 3vw;
     letter-spacing: 0.2em;
   }
   
