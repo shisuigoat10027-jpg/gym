@@ -3129,7 +3129,70 @@ body {
   
   /* Collection section optimization */
   .collection-section {
-    padding: 60px 16px !important;
+    padding: 60px 12px !important;
+  }
+  
+  .collection-section .product-card {
+    border-radius: 8px !important;
+    margin: 0 !important;
+  }
+  
+  .collection-section .product-image-wrapper {
+    height: 140px !important;
+    min-height: 120px !important;
+  }
+  
+  .collection-section .product-info {
+    padding: 6px 8px !important;
+  }
+  
+  .collection-section .product-variant {
+    font-size: 9px !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .collection-section .product-price {
+    font-size: 12px !important;
+  }
+  
+  .collection-section .product-price .original-price {
+    font-size: 9px !important;
+  }
+  
+  .collection-section .size-selector {
+    gap: 2px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .collection-section .size-btn {
+    padding: 3px 5px !important;
+    font-size: 8px !important;
+    min-width: 24px !important;
+  }
+  
+  .collection-section .btn-add-to-cart,
+  .collection-section .waitlist-btn {
+    padding: 5px 6px !important;
+    font-size: 9px !important;
+  }
+  
+  .collection-section .popular-badge {
+    font-size: 6px !important;
+    padding: 2px 4px !important;
+    top: 4px !important;
+    left: 4px !important;
+  }
+  
+  .collection-section .wishlist-heart {
+    width: 26px !important;
+    height: 26px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .collection-section .wishlist-heart svg {
+    width: 12px !important;
+    height: 12px !important;
   }
   
   .collection-title {
