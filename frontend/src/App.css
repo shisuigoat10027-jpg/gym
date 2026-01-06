@@ -7507,44 +7507,41 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Unified card layout - HORIZONTAL SCROLL on mobile */
+  /* Unified card layout - VERTICAL on mobile (image above details) */
   .modal-content {
     display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory;
+    flex-direction: column !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     gap: 0;
     padding: 8px;
-    -webkit-overflow-scrolling: touch;
+    max-height: calc(95vh - 50px);
   }
 
-  /* Remove separate backgrounds - unified card */
+  /* Image section on top */
   .modal-image-section {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
+    flex: 0 0 auto;
     background: transparent;
     padding: 8px 8px 0 8px;
     border-radius: 0;
-    min-width: 100%;
+    width: 100%;
   }
 
   .modal-details-section {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    min-width: 100%;
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .modal-image-container {
     border-radius: 10px;
-    height: 320px;
+    height: 280px;
     background: radial-gradient(ellipse at center, rgba(0, 217, 255, 0.04) 0%, rgba(10, 10, 10, 0.8) 40%, #0a0a0a 80%);
     border: 1px solid rgba(0, 217, 255, 0.15);
   }
 
   .modal-product-image {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 85%;
   }
 
   /* Hide Front/Back toggle on mobile */
