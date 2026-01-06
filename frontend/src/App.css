@@ -2817,7 +2817,7 @@ body {
     align-items: center;
     text-align: center;
     order: 2;
-    margin-top: -90px;
+    margin-top: -110px;
     padding-top: 0;
   }
   
@@ -2825,7 +2825,7 @@ body {
     font-size: 13px;
     line-height: 1.5;
     max-width: 300px;
-    margin: 0 auto 12px;
+    margin: 0 auto 8px;
   }
   
   .hero-product-display {
