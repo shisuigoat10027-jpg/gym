@@ -3164,8 +3164,20 @@ body {
     font-size: 12px !important;
   }
   
-  .collection-section .product-price .original-price {
+  .collection-section .product-price-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+  
+  .collection-section .product-original-price {
     font-size: 9px !important;
+    order: 1;
+  }
+  
+  .collection-section .product-price {
+    order: 2;
   }
   
   .collection-section .size-selector {
