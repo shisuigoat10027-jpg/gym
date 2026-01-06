@@ -5,6 +5,8 @@ import { calculateSpotsRemaining } from '../utils/waitlistSpots';
 const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   // Next drop date - February 2, 2026
   const targetDate = new Date('2026-02-02T00:00:00');
@@ -42,10 +44,39 @@ const WaitlistBanner = ({ onClick }) => {
     };
   }, []);
 
+  // Scroll detection - show banner after scrolling past hero
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight * 0.85; // 85vh hero height
+      const scrollY = window.scrollY;
+      
+      // Show banner when scrolled past hero
+      if (scrollY > heroHeight) {
+        setIsVisible(true);
+        setIsSticky(true);
+      } else {
+        setIsVisible(false);
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const formatTime = (num) => String(num).padStart(2, '0');
 
+  // Don't render if not visible
+  if (!isVisible) return null;
+
   return (
-    <div className="waitlist-banner" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
+    <div 
+      className={`waitlist-banner ${isSticky ? 'sticky-banner' : ''}`} 
+      onClick={onClick} 
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
+    >
       <div className="banner-content">
         <div className="banner-left">
           <Flame size={20} className="banner-icon" />
