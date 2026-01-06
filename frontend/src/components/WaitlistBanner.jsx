@@ -5,8 +5,7 @@ import { calculateSpotsRemaining } from '../utils/waitlistSpots';
 const WaitlistBanner = ({ onClick }) => {
   const [spotsRemaining, setSpotsRemaining] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [isVisible, setIsVisible] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   // Next drop date - February 2, 2026
   const targetDate = new Date('2026-02-02T00:00:00');
@@ -44,39 +43,34 @@ const WaitlistBanner = ({ onClick }) => {
     };
   }, []);
 
-  // Scroll detection - show banner after scrolling past hero
+  // Show banner after ANY user interaction (touch or scroll)
   useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = window.innerHeight * 0.85; // 85vh hero height
-      const scrollY = window.scrollY;
-      
-      // Show banner when scrolled past hero
-      if (scrollY > heroHeight) {
-        setIsVisible(true);
-        setIsSticky(true);
-      } else {
-        setIsVisible(false);
-        setIsSticky(false);
-      }
+    const handleInteraction = () => {
+      setHasInteracted(true);
+      // Remove listeners after first interaction
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('mousedown', handleInteraction);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
+    window.addEventListener('scroll', handleInteraction);
+    window.addEventListener('touchstart', handleInteraction);
+    window.addEventListener('mousedown', handleInteraction);
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('mousedown', handleInteraction);
+    };
   }, []);
 
   const formatTime = (num) => String(num).padStart(2, '0');
 
-  // Don't render if not visible
-  if (!isVisible) return null;
+  // Don't render until user interacts
+  if (!hasInteracted) return null;
 
   return (
-    <div 
-      className={`waitlist-banner ${isSticky ? 'sticky-banner' : ''}`} 
-      onClick={onClick} 
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
-    >
+    <div className="waitlist-banner" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
       <div className="banner-content">
         <div className="banner-left">
           <Flame size={20} className="banner-icon" />
