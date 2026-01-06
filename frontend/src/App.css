@@ -2057,7 +2057,7 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 auto 2px auto;
+  margin: 0 auto 0 auto;
   line-height: 1.2;
   text-align: center;
   display: block;
@@ -2068,7 +2068,7 @@ body {
 .giveaway-choice-line {
   font-size: 1.05rem;
   font-weight: 700;
-  margin: 0 auto 8px auto;
+  margin: 0 auto 6px auto;
   text-align: center;
   line-height: 1.3;
 }
