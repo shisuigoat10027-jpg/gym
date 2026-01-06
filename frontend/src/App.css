@@ -2915,13 +2915,13 @@ body {
   
   /* BIGGER RAZE title and tagline on mobile - FLUID SCALING */
   .hero-title {
-    font-size: 18vw !important;
+    font-size: 12vw !important;
     margin-bottom: 1vw;
     letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 4.5vw !important;
+    font-size: 3vw !important;
     margin-bottom: 3vw;
     letter-spacing: 0.2em;
   }
