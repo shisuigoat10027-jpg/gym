@@ -3220,16 +3220,16 @@ body {
   }
   
   .collection-section .wishlist-heart {
-    width: 5vw !important;
-    height: 5vw !important;
-    top: 1.5vw !important;
-    right: 1.5vw !important;
-    background: rgba(0, 0, 0, 0.5) !important;
+    width: 8vw !important;
+    height: 8vw !important;
+    top: 2vw !important;
+    right: 2vw !important;
+    background: rgba(0, 0, 0, 0.6) !important;
   }
   
   .collection-section .wishlist-heart svg {
-    width: 2.5vw !important;
-    height: 2.5vw !important;
+    width: 4vw !important;
+    height: 4vw !important;
   }
   
   .collection-title {
