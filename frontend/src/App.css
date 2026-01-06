@@ -3138,8 +3138,8 @@ body {
   }
   
   .collection-section .product-image-wrapper {
-    height: 140px !important;
-    min-height: 120px !important;
+    height: 200px !important;
+    min-height: 180px !important;
   }
   
   .collection-section .product-info {
